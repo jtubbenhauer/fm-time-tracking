@@ -21,19 +21,19 @@ function ActivityCard({ title, timeframes, colour, format, icon }: DataItem) {
   }
 
   return (
-    <div className={"w-screen px-6 md:w-auto"}>
+    <div className={"w-screen px-6 md:px-0 md:w-auto md:min-w-[12rem]"}>
       <div
-        className={"h-[3rem] rounded-t-xl z-10 overflow-hidden"}
+        className={"h-[2.7rem] rounded-t-xl z-10 overflow-hidden"}
         style={{ backgroundColor: colour }}
       >
-        <img className={"ml-auto mr-4 -translate-y-1"} src={icon} alt="" />
+        <img className={"ml-auto mr-4 -translate-y-2"} src={icon} alt="" />
       </div>
       <div
         className={
-          "bg-fm-dark-blue rounded-xl text-white p-4 z-20 -translate-y-2"
+          "bg-fm-dark-blue rounded-xl text-white p-6 z-20 -translate-y-2"
         }
       >
-        <div className={"flex items-center justify-between"}>
+        <div className={"flex items-center justify-between md:mb-2"}>
           <p>{title}</p>
           <img src="/icon-ellipsis.svg" alt="" />
         </div>

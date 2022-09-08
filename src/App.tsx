@@ -35,7 +35,9 @@ function App() {
       >
         <ProfileCard format={format} setFormat={setFormat} />
         <div
-          className={"flex flex-col items-center gap-4 md:grid md:grid-cols-3"}
+          className={
+            "flex flex-col items-center gap-4 md:grid md:grid-cols-3 md:h-full"
+          }
         >
           {data.map((i) => (
             <ActivityCard

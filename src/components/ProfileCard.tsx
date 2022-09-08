@@ -8,10 +8,10 @@ interface Props {
 
 function ProfileCard({ format, setFormat }: Props) {
   return (
-    <div className={"flex flex-col w-screen px-6 md:w-auto"}>
+    <div className={"flex flex-col w-screen px-6 md:px-0 md:w-auto"}>
       <div
         className={
-          "bg-fm-blue flex md:flex-col p-6 rounded-xl z-20 items-center md:items-start justify-center gap-4 md:max-w-[13rem]"
+          "bg-fm-blue flex md:flex-col px-6 py-8 md:pt-4 rounded-xl z-20 items-center md:items-start justify-center gap-4 md:max-w-[13rem]"
         }
       >
         <div className={"border-2 border-solid border-white rounded-full"}>
@@ -19,7 +19,7 @@ function ProfileCard({ format, setFormat }: Props) {
         </div>
         <div className={"flex flex-col text-white"}>
           <p className={"font-light text-md opacity-70"}>Report for</p>
-          <p className={"text-xl font-light"}>Jeremy Robson</p>
+          <p className={"text-2xl font-light"}>Jeremy Robson</p>
         </div>
       </div>
       <div
@@ -29,7 +29,7 @@ function ProfileCard({ format, setFormat }: Props) {
       >
         <div
           className={
-            "flex md:flex-col items-center md:items-start md:gap-3 justify-between text-fm-desat-blue py-6 px-8"
+            "flex md:flex-col items-center md:items-start md:gap-2 justify-center gap-16 text-fm-desat-blue py-6 px-8"
           }
         >
           <button
