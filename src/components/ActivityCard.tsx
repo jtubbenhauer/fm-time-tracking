@@ -1,24 +1,10 @@
 import React from "react";
-import { Timeframes } from "../App";
 import classNames from "classnames";
+import { DataItem } from "../App";
 
-interface Props {
-  title: string;
-  timeframes: Timeframes;
-  colour: string;
-  format: string;
-  icon: string;
-}
-
-function ActivityCard({ title, timeframes, colour, format, icon }: Props) {
-  const topBarClasses = classNames(
-    "h-[3rem] rounded-t-xl z-10 overflow-hidden",
-    `bg-${colour}`
-  );
-
+function ActivityCard({ title, timeframes, colour, format, icon }: DataItem) {
   let data;
   let previousText;
-
   switch (format) {
     case "daily":
       data = timeframes.daily;
@@ -35,8 +21,11 @@ function ActivityCard({ title, timeframes, colour, format, icon }: Props) {
   }
 
   return (
-    <div className={"w-4/5"}>
-      <div className={topBarClasses}>
+    <div className={"w-screen px-6 md:w-auto"}>
+      <div
+        className={"h-[3rem] rounded-t-xl z-10 overflow-hidden"}
+        style={{ backgroundColor: colour }}
+      >
         <img className={"ml-auto mr-4 -translate-y-1"} src={icon} alt="" />
       </div>
       <div
@@ -48,9 +37,15 @@ function ActivityCard({ title, timeframes, colour, format, icon }: Props) {
           <p>{title}</p>
           <img src="/icon-ellipsis.svg" alt="" />
         </div>
-        <div className={"flex items-center justify-between"}>
+        <div
+          className={
+            "flex md:flex-col md:items-start items-center justify-between"
+          }
+        >
           <p className={"text-3xl font-light"}>{data?.current}hrs</p>
-          <p>{previousText}</p>
+          <p className={"font-light text-sm text-fm-pale-blue"}>
+            {previousText}
+          </p>
         </div>
       </div>
     </div>

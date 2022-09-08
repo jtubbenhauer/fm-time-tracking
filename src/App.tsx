@@ -3,33 +3,52 @@ import ProfileCard from "./components/ProfileCard";
 import { useState } from "react";
 import ActivityCard from "./components/ActivityCard";
 
-export interface Timeframes {
-  daily: {
-    current: number;
-    previous: number;
-  };
-  monthly: {
-    current: number;
-    previous: number;
-  };
-  weekly: {
-    current: number;
-    previous: number;
+export interface DataItem {
+  title: string;
+  colour: string;
+  icon: string;
+  format?: string;
+  timeframes: {
+    daily: {
+      current: number;
+      previous: number;
+    };
+    weekly: {
+      current: number;
+      previous: number;
+    };
+    monthly: {
+      current: number;
+      previous: number;
+    };
   };
 }
 
 function App() {
   const [format, setFormat] = useState("daily");
   return (
-    <div className={"flex flex-col items-center justify-center h-screen"}>
-      <ProfileCard format={format} setFormat={setFormat} />
-      <ActivityCard
-        title={data[0].title}
-        timeframes={data[0].timeframes}
-        colour={"fm-light-red-work"}
-        format={format}
-        icon={"icon-play.svg"}
-      />
+    <div className={"flex items-center justify-center md:h-screen"}>
+      <div
+        className={
+          "flex flex-col md:flex-row items-center justify-center gap-4"
+        }
+      >
+        <ProfileCard format={format} setFormat={setFormat} />
+        <div
+          className={"flex flex-col items-center gap-4 md:grid md:grid-cols-3"}
+        >
+          {data.map((i) => (
+            <ActivityCard
+              key={i.title}
+              title={i.title}
+              timeframes={i.timeframes}
+              colour={i.colour}
+              format={format}
+              icon={i.icon}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

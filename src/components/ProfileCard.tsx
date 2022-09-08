@@ -1,5 +1,5 @@
 import React from "react";
-import jeremyImg from "../../public/image-jeremy.png";
+import jeremyImg from "/image-jeremy.png";
 
 interface Props {
   format: string;
@@ -8,10 +8,10 @@ interface Props {
 
 function ProfileCard({ format, setFormat }: Props) {
   return (
-    <div className={"flex flex-col w-4/5"}>
+    <div className={"flex flex-col w-screen px-6 md:w-auto"}>
       <div
         className={
-          "bg-fm-blue flex sm:flex-col p-6 rounded-xl z-20 items-center sm:items-start justify-center gap-4 sm:max-w-[13rem]"
+          "bg-fm-blue flex md:flex-col p-6 rounded-xl z-20 items-center md:items-start justify-center gap-4 md:max-w-[13rem]"
         }
       >
         <div className={"border-2 border-solid border-white rounded-full"}>
@@ -24,12 +24,12 @@ function ProfileCard({ format, setFormat }: Props) {
       </div>
       <div
         className={
-          "bg-fm-dark-blue -translate-y-[0.75rem] z-0 pt-[0.75rem] rounded-b-xl sm:max-w-[13rem]"
+          "bg-fm-dark-blue -translate-y-[0.75rem] z-0 pt-[0.75rem] rounded-b-xl md:max-w-[13rem]"
         }
       >
         <div
           className={
-            "flex sm:flex-col items-center sm:items-start sm:gap-3 justify-between text-fm-desat-blue py-6 px-8"
+            "flex md:flex-col items-center md:items-start md:gap-3 justify-between text-fm-desat-blue py-6 px-8"
           }
         >
           <button
