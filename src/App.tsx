@@ -30,7 +30,7 @@ function App() {
     <div className={"flex items-center justify-center md:h-screen"}>
       <div
         className={
-          "flex flex-col md:flex-row items-center justify-center gap-4"
+          "flex flex-col md:flex-row items-center justify-center gap-4 my-16 md:my-0"
         }
       >
         <ProfileCard format={format} setFormat={setFormat} />

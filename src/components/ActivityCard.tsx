@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import { DataItem } from "../App";
 
 function ActivityCard({ title, timeframes, colour, format, icon }: DataItem) {
@@ -33,7 +32,7 @@ function ActivityCard({ title, timeframes, colour, format, icon }: DataItem) {
           "bg-fm-dark-blue rounded-xl text-white p-6 z-20 -translate-y-2"
         }
       >
-        <div className={"flex items-center justify-between md:mb-2"}>
+        <div className={"flex items-center justify-between md:mb-2 md:text-sm"}>
           <p>{title}</p>
           <img src="/icon-ellipsis.svg" alt="" />
         </div>
